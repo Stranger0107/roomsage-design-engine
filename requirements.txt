@@ -9,7 +9,7 @@ Pillow>=10.0,<13.0
 numpy>=1.26,<3.0
 
 # Budget optimisation (multiple-choice knapsack)
-pulp[cbc]>=3.0,<5.0
+pulp[cbc]>=4.0,<5.0
 # Near-duplicate detection in the dataset pipeline
 rapidfuzz>=3.9,<4.0
 

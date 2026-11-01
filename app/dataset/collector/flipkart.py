@@ -57,6 +57,8 @@ _EXCLUDED_NAME_WORDS = (
     "seed", "mattress", "cover set", "sticker", "decal", "kids", "pet ",
     "christmas", "diwali", "rakhi", "holi ", "ganesh", "goddess", "durga", "lord ",
     "buddha", "krishna", "shiva", "rice light", "series light",
+    # Listed under decor or seating, but not what a room plan means by those.
+    "magnet", "key holder", "key hanger", "sky lantern", "without filling", "cartoon",
 )
 
 

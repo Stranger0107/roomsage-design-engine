@@ -881,42 +881,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-0a3b5fdf77a3",
-  "name": "SHOPOJ Blue Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "modern",
-   "traditional",
-   "contemporary",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of SHOPOJ Blue Paper Sky Lantern Paper Light Source - Candle,SHOPOJ Blue Paper Sky Lantern (80 cm X 34 cm, Pack of 35) Price: Rs. 1,458 A sky lantern, also known as Kongming lantern or Chinese lantern, is a small hot air balloon made of paper, with an opening at the bottom where a small fire is suspended. You can write down your wish on it and pray it come true when you fly the lantern Great for making a wish at Valentine's Day, Christmas Day, New Years Day, birthday, etc.,Specifica",
-  "image_url": "http://img5a.flixcart.com/image/lantern/h/h/j/sj-25blu-0081-shopoj-1100x1100-imae65w8zjb5utjk.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-blue-paper-sky-lantern/p/itmehqspbdxzvhnf?pid=LTNEHQSPYYBAEWYY",
-  "price_inr": 1458.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "blue",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-0a59c85389ff",
   "name": "Sovam International Peacock With Meena Art Showpiece  -  4 cm",
   "category": "accessory",
@@ -4286,37 +4250,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-31d7bd655e1c",
-  "name": "Tootpado Cartoon LED Desk Light - 1m189 - (Small Size: 7x5x8 cm) Study Table Lamp",
-  "category": "lighting",
-  "compatible_themes": [
-   "modern",
-   "traditional",
-   "contemporary"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of Tootpado Cartoon LED Desk Light - 1m189 - (Small Size: 7x5x8 cm) Study Table Lamp Cute Cartoon Design Fancy Night light Light up your bedroom and chase away the dark, with this lovely little lamp \"Item Type: Night Lights Power Source: 3 Button Cells  \" \"Material: Ceramic  Box Size: 7x5x8 cm Approximately.\",Tootpado Cartoon LED Desk Light - 1m189 - (Small Size: 7x5x8 cm) Study Table Lamp (8 cm, Blue) Price: Rs. 349 \"Cute Cartoon Design Fancy Night light. Light up your bedroom and ",
-  "image_url": "http://img6a.flixcart.com/image/table-lamp/p/e/y/1m000189-tootpado-cartoon-led-desk-light-1m189-small-size-7x5x8-original-imaehc8jhspb9sz2.jpeg",
-  "product_url": "http://www.flipkart.com/tootpado-cartoon-led-desk-light-1m189-small-size-7x5x8-cm-study-table-lamp/p/itmehccvnaagpzzx?pid=TLPEHCCVZGZ5VPEY",
-  "price_inr": 349.0,
-  "price_as_of": "2016-04-16",
-  "dimensions": {
-   "width_cm": 5.0,
-   "height_cm": 8.0
-  },
-  "color": "blue",
-  "brand": "Tootpado",
-  "tags": [
-   "study"
-  ],
-  "room_types": [
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-31f6de9cbc55",
   "name": "Apkamart Traditional Pitcher 8 Inch Showpiece  -  20 cm",
   "category": "accessory",
@@ -7275,40 +7208,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-540f0b03bf05",
-  "name": "SHOPOJ 50 Sky Lanterns Yellow Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "bohemian",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Specifications of SHOPOJ 50 Sky Lanterns Yellow Paper Sky Lantern (80 cm X 34 cm, Pack of 50) General Brand SHOPOJ Model Number SJ- 50YEL-0096 Type Sky Lantern Shade Yellow Maximum Altitude 2200 m Ideal For Outdoor Color Yellow Model Name 50 Sky Lanterns Body and Design Features Light Source Candle Material Paper Finish Glossy Number Of Lights 1 Design Plain In the box Pack of 50 Sales Package 50 Sky Lanterns Dimensions Diameter 30 cm Weight 700 g Other Dimensions 34 x 34 x 80 Height 80 cm Width",
-  "image_url": "http://img6a.flixcart.com/image/lantern/c/y/g/sj-45yel-0095-shopoj-1100x1100-imaehn8y7fqxbygd.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-50-sky-lanterns-yellow-paper-lantern/p/itmehqsqp7y78ydx?pid=LTNEHQSQZV6EGAZZ",
-  "price_inr": 1950.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "yellow",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-54ac93c4b95f",
   "name": "Diviniti MDF Color Religious Wall Hanging Size 4 Sai Baba Showpiece  -  36.4 cm",
   "category": "accessory",
@@ -7551,36 +7450,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-57578c1e6ec6",
-  "name": "VarEesha Wooden Key Holder",
-  "category": "wall_decor",
-  "compatible_themes": [
-   "minimalist",
-   "bohemian",
-   "traditional",
-   "contemporary"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of VarEesha Wooden Key Holder Hand made using wrought iron and mango wood Color - Brown Material - Sheesham wood Care instructions : Clean with a wet cloth and wipe gently.,VarEesha Wooden Key Holder (8 Hooks, Multicolor) Price: Rs. 1,199 Traditional design combined with utility, this wood and iron designed keybox is a convenient place to store all your keys. The iron design has a glass back to protect from dust and makes this box very manageable. Has 6 hooks inside for your keys wh",
-  "image_url": "http://img5a.flixcart.com/image/key-holder/p/s/j/vsswh001-vareesha-1100x1100-imaeh22weggza2mf.jpeg",
-  "product_url": "http://www.flipkart.com/vareesha-wooden-key-holder/p/itmeh26zhgzqyqmb?pid=KHREH26ZBZCPVPSJ",
-  "price_inr": 1199.0,
-  "price_as_of": "2016-03-25",
-  "color": "multicolor",
-  "material": "wood",
-  "brand": "VarEesha",
-  "tags": [],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-57779cfecdde",
   "name": "PrimeLine Oil Painting",
   "category": "wall_decor",
@@ -7704,38 +7573,6 @@
   "tags": [
    "religious idols"
   ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-58c7af2b4a43",
-  "name": "wallskart Animation & Cartoons Wallpaper",
-  "category": "wall_decor",
-  "compatible_themes": [
-   "modern",
-   "minimalist",
-   "industrial",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of wallskart Animation & Cartoons Wallpaper Suitable For: Living Room, Bed Room, Kitchen, Office Color: Black Material: Vinyl Paper Type: Vinyl,wallskart Animation & Cartoons Wallpaper (83.82000000000001 cm X 22.86 cm) Price: Rs. 299 Welcome to the foremost place on the web to find artistic designs of wall decals and wall stickers.Wall decals and wall stickers are self-adhesive vinyl stickers made for applying to a surface.They are a great alternative to wallpaper, paint or stencils",
-  "image_url": "http://img5a.flixcart.com/image/wallpaper/z/s/w/wkhs0190xl-45-72-162-56-wallskart-original-imaej2zahgzkuszy.jpeg",
-  "product_url": "http://www.flipkart.com/wallskart-animation-cartoons-wallpaper/p/itmej5vggcx9hjab?pid=WLPEJ5VGBMZKHWAZ",
-  "price_inr": 299.0,
-  "price_as_of": "2016-06-20",
-  "dimensions": {
-   "width_cm": 22.9
-  },
-  "color": "black",
-  "brand": "wallskart",
-  "tags": [],
   "room_types": [
    "living_room",
    "bedroom",
@@ -8041,43 +7878,6 @@
   "tags": [
    "tumblers",
    "vases"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-5c77aa1fc099",
-  "name": "Craftcart Parrot Antique Brass Key Holder",
-  "category": "wall_decor",
-  "compatible_themes": [
-   "industrial",
-   "bohemian",
-   "traditional",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of Craftcart Parrot Antique Brass Key Holder Pack of: 1 Shape: Parrot Mount Mechanism: Screw-in,Craftcart Parrot Antique Brass Key Holder (5 Hooks, Brown) Price: Rs. 350 Designer Brass Key Holder,Specifications of Craftcart Parrot Antique Brass Key Holder (5 Hooks, Brown) General Brand Craftcart Shape Parrot Model Number KH-Parrot-A Model Name Parrot Antique Material Brass Finish Antique Number of Hooks 5 Mount Mechanism Screw-in Color Brown In the box Sales Package 1 Key Holder Pac",
-  "image_url": "http://img5a.flixcart.com/image/key-holder/g/7/j/kh-parrot-a-craftcart-original-imaejvrab4agcefh.jpeg",
-  "product_url": "http://www.flipkart.com/craftcart-parrot-antique-brass-key-holder/p/itmejwm2jkkpt8ew?pid=KHREJWM2NDAMPG7J",
-  "price_inr": 350.0,
-  "price_as_of": "2016-06-24",
-  "dimensions": {
-   "width_cm": 14.0,
-   "depth_cm": 3.0,
-   "height_cm": 11.0
-  },
-  "color": "brown",
-  "material": "brass",
-  "brand": "Craftcart",
-  "tags": [
-   "parrot"
   ],
   "room_types": [
    "living_room",
@@ -9135,39 +8935,6 @@
   "brand": "Shree Homdecor",
   "tags": [
    "ethnic"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-6681fc5e483f",
-  "name": "SHOPOJ Multicolor Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "bohemian"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of SHOPOJ Multicolor Paper Sky Lantern Paper Light Source - Candle,SHOPOJ Multicolor Paper Sky Lantern (80 cm X 34 cm, Pack of 10) Price: Rs. 515 Chinese Paper Lanterns, in China, they call them Kongming Lantern. It is said they were invented by a hero whose name was Kongming. Chinese Paper Lanterns are ideal for wedding, holiday, birthday and other celebrations parties, they are the perfect, safe alternative to fireworks display that can provide a finale to your big day that you an",
-  "image_url": "http://img5a.flixcart.com/image/lantern/z/b/g/sj-10mlt-0059-shopoj-1100x1100-imaeg446yh2bym7v.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-multicolor-paper-sky-lantern/p/itmehqsp8khfzzwf?pid=LTNEHQSP8TGD3ZBG",
-  "price_inr": 515.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "multicolor",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
   ],
   "room_types": [
    "living_room",
@@ -10495,39 +10262,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-74bf51d41d30",
-  "name": "AAKAR Cartoon Cushions Cover",
-  "category": "accessory",
-  "compatible_themes": [
-   "bohemian"
-  ],
-  "theme_source": "derived_rules",
-  "description": "AAKAR Cartoon Cushions Cover (Pack of 4, 40 cm*40 cm, Multicolor)\n                         Price: Rs. 499\n\t\t\t\t\n\t\t\tDigitally printed unique design with MOWGLI cartoon character. Its a multicolored cushion cover and is perfect for enhancing the look of your living room or drawing room. High quality print.\nDigitally printed unique design with MOWGLI cartoon character. Its a multicolored cushion cover and is perfect for enhancing the look of your living room or drawing room. High quality print.",
-  "image_url": "http://img5a.flixcart.com/image/cushion-pillow-cover/t/u/9/akarce-akarce003-aakar-original-imaed8bggwwu2yvp.jpeg",
-  "product_url": "http://www.flipkart.com/aakar-cartoon-cushions-cover/p/itmed8gwtzhhzmjh?pid=CPCED8GWXMJG6TU9",
-  "price_inr": 499.0,
-  "price_as_of": "2015-12-20",
-  "dimensions": {
-   "width_cm": 40.0,
-   "height_cm": 40.0
-  },
-  "color": "multicolor",
-  "brand": "AAKAR",
-  "tags": [
-   "cartoon",
-   "square"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-74d37e50daac",
   "name": "House This Cotton Pink Floral Eyelet Window Curtain",
   "category": "curtain",
@@ -11052,38 +10786,6 @@
   "brand": "Galaxy Decorations",
   "tags": [
    "eyelet"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-7a2ffd9ce362",
-  "name": "Shadowfax STRAWBERRY_MAGNET Fridge Magnet",
-  "category": "wall_decor",
-  "compatible_themes": [
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of Shadowfax STRAWBERRY_MAGNET Fridge Magnet Material: Ceramic Finish: LAMINATED Height: 1.5 cm,Specifications of Shadowfax STRAWBERRY_MAGNET Fridge Magnet (Pack of 1) General Brand Shadowfax Brand Color RED Model Number MAGNET999 Type Fridge Magnet Material Ceramic Model Name STRAWBERRY_MAGNET Finish LAMINATED Dimensions Height 1.5 cm Width 3 cm In the Box Pack of 1",
-  "image_url": "http://img6a.flixcart.com/image/magnet/q/y/f/magnet999-shadowfax-1100x1100-imaefzkfgkhnh3er.jpeg",
-  "product_url": "http://www.flipkart.com/shadowfax-strawberry-magnet-fridge-magnet/p/itmefpj5zbhfpuz8?pid=MANEFPJ5BZVWZQYF",
-  "price_inr": 199.0,
-  "price_as_of": "2016-03-03",
-  "dimensions": {
-   "width_cm": 3.0,
-   "height_cm": 1.5
-  },
-  "material": "ceramic",
-  "brand": "Shadowfax",
-  "tags": [
-   "fridge magnet"
   ],
   "room_types": [
    "living_room",
@@ -14196,41 +13898,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-a002b80cfd37",
-  "name": "Lal Haveli Rajasthani Beautiful Wall Hanging Letter Box With Key Hanger Showpiece  -  47 cm",
-  "category": "accessory",
-  "compatible_themes": [
-   "bohemian",
-   "traditional",
-   "contemporary"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Lal Haveli Rajasthani Beautiful Wall Hanging Letter Box With Key Hanger Showpiece  -  47 cm (Wooden, Multicolor)\n                         Price: Rs. 750\n\t\t\t\t\n\t\t\tThis Handcrafted two magazine Holder along with hooks for holding key chains is made of wood.Its colours and royal design makes it a piece crafted stylishly for you. You can hang in on the backside the door or on the wall for that added style to your decor. Also, you can place it on the study table or near the telephone so that it is con",
-  "image_url": "http://img5a.flixcart.com/image/showpiece-figurine/z/a/h/hnd00391-lal-haveli-original-imae9ehh3mbvtbp8.jpeg",
-  "product_url": "http://www.flipkart.com/lal-haveli-rajasthani-beautiful-wall-hanging-letter-box-key-hanger-showpiece-47-cm/p/itme9j6pacjhhhre?pid=SHIE9J6PFGP9DZAH",
-  "price_inr": 750.0,
-  "price_as_of": "2015-12-01",
-  "dimensions": {
-   "width_cm": 22.9,
-   "height_cm": 47.0
-  },
-  "color": "multicolor",
-  "material": "wood",
-  "brand": "Lal Haveli",
-  "tags": [
-   "ethnic"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-a027fdbbd62f",
   "name": "Gift Island Asset Showpiece  -  30 cm",
   "category": "accessory",
@@ -15564,36 +15231,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-b03486757d27",
-  "name": "VarEesha Wooden Key Holder",
-  "category": "wall_decor",
-  "compatible_themes": [
-   "minimalist",
-   "bohemian",
-   "traditional",
-   "contemporary"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of VarEesha Wooden Key Holder Hand Painted using Rajasthani Cone work Color - Multicolored Material - Recycled Wood Care instructions : Clean with a wet cloth and wipe gently.,VarEesha Wooden Key Holder (4 Hooks, Multicolor) Price: Rs. 599 An elegant Royal Hand Made Key Holder from VarEesha, this is a small, yet convenient utility cum decorative wall hanging. It has four hooks to store daily knick knacks and keys. Mafe in classic colours combination of gold and copper, it brings a t",
-  "image_url": "http://img5a.flixcart.com/image/key-holder/y/y/h/vgbwh003-vareesha-1100x1100-imaeh22wjmguxh3v.jpeg",
-  "product_url": "http://www.flipkart.com/vareesha-wooden-key-holder/p/itmeh26zhcmayrdb?pid=KHREH26Z6GEDTYYH",
-  "price_inr": 599.0,
-  "price_as_of": "2016-03-25",
-  "color": "multicolor",
-  "material": "wood",
-  "brand": "VarEesha",
-  "tags": [],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-b04b7417d4cb",
   "name": "Mable Brass - Pair Of Duck- Hand Carved Showpiece  -  64 cm",
   "category": "accessory",
@@ -16452,42 +16089,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-b96d39d93637",
-  "name": "SHOPOJ Red Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "bohemian",
-   "traditional",
-   "contemporary",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Specifications of SHOPOJ Red Paper Sky Lantern (80 cm X 34 cm, Pack of 5) General Brand SHOPOJ Model Number SJ-5RED-0074 Shade Red Type Sky Lantern Maximum Altitude 2200 m Ideal For Outdoor Color Red Body and Design Features Light Source Candle Material Paper Finish Glossy Number Of Lights 1 Design Plain In the box Pack of 5 Dimensions Diameter 30 cm Weight 200 g Height 80 cm Other Dimensions 34 x 34 x 80 Width 34 cm",
-  "image_url": "http://img6a.flixcart.com/image/lantern/w/r/9/sj-5red-0074-shopoj-1100x1100-imaeg446cqn8fn2q.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-red-paper-sky-lantern/p/itmehqspfwshztzq?pid=LTNEHQSP6MQAQWR9",
-  "price_inr": 349.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "red",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-b9a4519a7362",
   "name": "Diviniti Mdf Royal Religious Wall Hanging Size 2.5 Bal Gopal Showpiece  -  25 cm",
   "category": "accessory",
@@ -16967,40 +16568,6 @@
   "color": "gold",
   "brand": "Sukhson India",
   "tags": [],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-c0493017209f",
-  "name": "SHOPOJ 15 Sky Lanterns Yellow Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "bohemian",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of SHOPOJ 15 Sky Lanterns Yellow Paper Sky Lantern Paper Light Source - Candle,SHOPOJ 15 Sky Lanterns Yellow Paper Sky Lantern (80 cm X 34 cm, Pack of 15) Price: Rs. 699 A sky lantern, also known as Kongming lantern or Chinese lantern, is a small hot air balloon made of paper, with an opening at the bottom where a small fire is suspended. You can write down your wish on it and pray it come true when you fly the lantern Great for making a wish at Valentine's Day, Christmas Day, New Y",
-  "image_url": "http://img6a.flixcart.com/image/lantern/c/y/g/sj-45yel-0095-shopoj-1100x1100-imaehn8y7fqxbygd.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-15-sky-lanterns-yellow-paper-lantern/p/itmehqsps3grzkdb?pid=LTNEHQSP479D2F8K",
-  "price_inr": 699.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "yellow",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
-  ],
   "room_types": [
    "living_room",
    "bedroom",
@@ -19813,42 +19380,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-da9a59932083",
-  "name": "AND Designs Artistic Wooden Key Holder Wooden Key Holder",
-  "category": "wall_decor",
-  "compatible_themes": [
-   "minimalist",
-   "bohemian",
-   "traditional",
-   "contemporary"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of AND Designs Artistic Wooden Key Holder Wooden Key Holder Cloth Hanger Artistic Handicraft Package Holder Treditional Handicraft,AND Designs Artistic Wooden Key Holder Wooden Key Holder (6 Hooks, Multicolor) Price: Rs. 300 Artistic Handicrafts, Key Holder, Cloth Hanger, Wall Decorator,Specifications of AND Designs Artistic Wooden Key Holder Wooden Key Holder (6 Hooks, Multicolor) General Shape Semi Circle Brand AND Designs Model Number AND021600028 Material Wooden Model Name Artis",
-  "image_url": "http://img5a.flixcart.com/image/key-holder/y/3/j/and021600028-and-designs-1100x1100-imaeh4gcuegvqx5h.jpeg",
-  "product_url": "http://www.flipkart.com/designs-artistic-wooden-key-holder/p/itmegsdwhdqet7a7?pid=KHREGSDWQZKZRY3J",
-  "price_inr": 300.0,
-  "price_as_of": "2016-03-25",
-  "dimensions": {
-   "width_cm": 25.0,
-   "height_cm": 13.0
-  },
-  "color": "multicolor",
-  "material": "wood",
-  "brand": "AND Designs",
-  "tags": [
-   "semi circle"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-db23c8e84b77",
   "name": "GAGA Canvas Painting",
   "category": "wall_decor",
@@ -20701,43 +20232,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-e580a5129339",
-  "name": "SHOPOJ White Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "modern",
-   "minimalist",
-   "scandinavian",
-   "contemporary",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of SHOPOJ White Paper Sky Lantern Paper Light Source - Candle,SHOPOJ White Paper Sky Lantern (80 cm X 34 cm, Pack of 10) Price: Rs. 550 Chinese Paper Lanterns, in China, they call them Kongming Lantern. It is said they were invented by a hero whose name was Kongming. Chinese Paper Lanterns are ideal for wedding, holiday, birthday and other celebrations parties, they are the perfect, safe alternative to fireworks display that can provide a finale to your big day that you and your gue",
-  "image_url": "http://img5a.flixcart.com/image/lantern/d/4/6/sj-10wht-0064-shopoj-1100x1100-imaeg446kszh4rvb.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-white-paper-sky-lantern/p/itmehqsp26hgrbvg?pid=LTNEHQSPPDC48D46",
-  "price_inr": 550.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "white",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-e5a97beaed03",
   "name": "Durian Fabric 3 Seater Sofa",
   "category": "sofa_seating",
@@ -21335,71 +20829,6 @@
    "study"
   ],
   "small_room_suitable": true,
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-eafd94493359",
-  "name": "SHOPOJ Yellow Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "bohemian",
-   "japandi"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of SHOPOJ Yellow Paper Sky Lantern Paper Light Source - Candle,SHOPOJ Yellow Paper Sky Lantern (80 cm X 34 cm, Pack of 40) Price: Rs. 1,635 A sky lantern, also known as Kongming lantern or Chinese lantern, is a small hot air balloon made of paper, with an opening at the bottom where a small fire is suspended. You can write down your wish on it and pray it come true when you fly the lantern Great for making a wish at Valentine's Day, Christmas Day, New Years Day, birthday, etc.,Speci",
-  "image_url": "http://img6a.flixcart.com/image/lantern/c/y/g/sj-45yel-0095-shopoj-1100x1100-imaehn8y7fqxbygd.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-yellow-paper-sky-lantern/p/itmehqspgsvygtxj?pid=LTNEHQSPHT4GAM7P",
-  "price_inr": 1635.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "yellow",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-eb10a2621ccb",
-  "name": "The Bean House XXXL Bean Bag  Cover (Without Filling)",
-  "category": "sofa_seating",
-  "compatible_themes": [
-   "modern",
-   "minimalist",
-   "scandinavian",
-   "contemporary"
-  ],
-  "theme_source": "derived_rules",
-  "description": "The Bean House XXXL Bean Bag  Cover (Without Filling) (Blue, White)\n                         Price: Rs. 1,199\n\t\t\t\t\n\t\t\tSoccer Bean Bags are a perfect companion to your living room or you children's room Enjoyed both by kids as well as adults it is meant for all ages .Become a kid again and enjoying relaxing on a Soccer bean bag as you do your favourite activity.\nSoccer Bean Bags are a perfect companion to your living room or you children's room Enjoyed both by kids as well as adults it is meant f",
-  "image_url": "http://img6a.flixcart.com/image/bean-bag/a/7/u/cmf5368-comfy-bean-bags-xl-original-imae24yabgpvasdy.jpeg",
-  "product_url": "http://www.flipkart.com/bean-house-xxxl-bag-cover-without-filling/p/itme74htdfgzqdrm?pid=BEBE74HTZM8FQPWK",
-  "price_inr": 1199.0,
-  "price_as_of": "2016-01-04",
-  "dimensions": {
-   "height_cm": 55.9
-  },
-  "color": "white",
-  "brand": "The Bean House",
-  "tags": [
-   "round"
-  ],
-  "room_types": [
-   "living_room"
-  ],
   "source": "flipkart_promptcloud_2016",
   "source_license": "CC-BY-SA-4.0",
   "verification_status": "source_dataset"
@@ -22120,39 +21549,6 @@
   "verification_status": "source_dataset"
  },
  {
-  "product_id": "fk-f23878b726e4",
-  "name": "SHOPOJ Multicolor Paper Sky Lantern",
-  "category": "lighting",
-  "compatible_themes": [
-   "bohemian"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of SHOPOJ Multicolor Paper Sky Lantern Paper Light Source - Candle,SHOPOJ Multicolor Paper Sky Lantern (80 cm X 34 cm, Pack of 20) Price: Rs. 825 Chinese Paper Lanterns, in China, they call them Kongming Lantern. It is said they were invented by a hero whose name was Kongming. Chinese Paper Lanterns are ideal for wedding, holiday, birthday and other celebrations parties, they are the perfect, safe alternative to fireworks display that can provide a finale to your big day that you an",
-  "image_url": "http://img5a.flixcart.com/image/lantern/k/c/g/sj-20mlt-0060-shopoj-1100x1100-imaeg446zutbzs9p.jpeg",
-  "product_url": "http://www.flipkart.com/shopoj-multicolor-paper-sky-lantern/p/itmehqsp5rh6j387?pid=LTNEHQSPHYAHDKCG",
-  "price_inr": 825.0,
-  "price_as_of": "2016-04-18",
-  "dimensions": {
-   "width_cm": 34.0,
-   "height_cm": 80.0
-  },
-  "color": "multicolor",
-  "material": "paper",
-  "brand": "SHOPOJ",
-  "tags": [
-   "sky lantern"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
   "product_id": "fk-f39a2cce8929",
   "name": "Tiedribbons We Love Mom With Green Background Tile Showpiece  -  28 cm",
   "category": "accessory",
@@ -22701,42 +22097,6 @@
   "brand": "Furhome",
   "tags": [
    "eyelet"
-  ],
-  "room_types": [
-   "living_room",
-   "bedroom",
-   "dining_room",
-   "study"
-  ],
-  "source": "flipkart_promptcloud_2016",
-  "source_license": "CC-BY-SA-4.0",
-  "verification_status": "source_dataset"
- },
- {
-  "product_id": "fk-fa84718af3ff",
-  "name": "LittleThings Coconut Fridge Magnet",
-  "category": "wall_decor",
-  "compatible_themes": [
-   "scandinavian",
-   "bohemian",
-   "traditional",
-   "contemporary"
-  ],
-  "theme_source": "derived_rules",
-  "description": "Key Features of LittleThings Coconut Fridge Magnet Material: Polyresin Finish: matt Height: 5 cm Color: Green,LittleThings Coconut Fridge Magnet (Pack of 1, Green) Price: Rs. 300 \"Go nuts over coconuts. The not-so-tender coconut that is good for health. Yes, especially if you don’t eat or drink it then it’s even better for your health. Product specification: * Green coconut with a straw * Measures around 2 inch in height and 1 inch width and weighs less than 20gm. * Priced at Rs. 300/-.,Specific",
-  "image_url": "http://img5a.flixcart.com/image/magnet/z/6/n/00117-littlethings-original-imaegff2gnjka5vq.jpeg",
-  "product_url": "http://www.flipkart.com/littlethings-coconut-fridge-magnet/p/itmeghzgmwgmzyfk?pid=MANEGHZGXG5DTZ6N",
-  "price_inr": 300.0,
-  "price_as_of": "2016-03-09",
-  "dimensions": {
-   "width_cm": 5.0,
-   "height_cm": 5.0
-  },
-  "color": "green",
-  "material": "polyresin",
-  "brand": "LittleThings",
-  "tags": [
-   "fridge magnet"
   ],
   "room_types": [
    "living_room",
