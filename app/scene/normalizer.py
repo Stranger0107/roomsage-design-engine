@@ -5,6 +5,7 @@ It does not expose room dimensions or detected objects, so those arrive from the
 caller or from photo analysis, or stay unknown. Nothing here fills a gap with a guess.
 """
 
+import re
 from typing import Any
 
 from pydantic import ValidationError
@@ -26,8 +27,10 @@ _OBJECT_ALIASES = {
     "table": Category.TABLE, "desk": Category.TABLE,
     "chair": Category.CHAIR, "stool": Category.CHAIR,
     "wardrobe": Category.STORAGE, "cabinet": Category.STORAGE, "shelf": Category.STORAGE,
+    "shelves": Category.STORAGE, "bookshelf": Category.STORAGE, "bookshelves": Category.STORAGE,
     "bookcase": Category.STORAGE, "dresser": Category.STORAGE, "chest": Category.STORAGE,
-    "lamp": Category.LIGHTING, "light": Category.LIGHTING, "chandelier": Category.LIGHTING,
+    "lamp": Category.LIGHTING, "light": Category.LIGHTING, "lighting": Category.LIGHTING,
+    "chandelier": Category.LIGHTING,
     "rug": Category.RUG, "carpet": Category.RUG,
     "curtain": Category.CURTAIN, "blind": Category.CURTAIN,
     "painting": Category.WALL_DECOR, "mirror": Category.WALL_DECOR, "poster": Category.WALL_DECOR,
@@ -48,9 +51,18 @@ def normalize_room_type(value: str | RoomType | None) -> RoomType | None:
         return next((room for key, room in _ROOM_ALIASES.items() if key in lowered), RoomType.OTHER)
 
 
+def category_for_word(word: str) -> Category | None:
+    """Whole words only, so "bedroom" is not a bed and "lighter" is not a light."""
+    for form in (word, word.removesuffix("s"), word.removesuffix("es")):
+        if form in _OBJECT_ALIASES:
+            return _OBJECT_ALIASES[form]
+    return None
+
+
 def category_for_label(label: str) -> Category | None:
-    lowered = label.lower()
-    return next((cat for key, cat in _OBJECT_ALIASES.items() if key in lowered), None)
+    """The last object word is the head noun: a "table lamp" is a lamp."""
+    found = [c for c in map(category_for_word, re.findall(r"[a-z]+", label.lower())) if c]
+    return found[-1] if found else None
 
 
 def _coerce_objects(raw: Any) -> list[SceneObject]:

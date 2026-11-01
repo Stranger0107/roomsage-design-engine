@@ -16,7 +16,7 @@ from app.llm.schemas import (
     RefinementPatch,
 )
 from app.scene.models import SceneInfo
-from app.scene.normalizer import category_for_label
+from app.scene.normalizer import category_for_label, category_for_word
 
 E, R, O = Priority.ESSENTIAL, Priority.RECOMMENDED, Priority.OPTIONAL
 
@@ -53,7 +53,6 @@ COLOR_ALIASES = {
     "darker": ["charcoal", "dark grey", "black", "brown", "navy"],
     "dark": ["charcoal", "dark grey", "black", "brown", "navy"],
     "lighter": ["white", "off white", "beige", "light grey", "cream"],
-    "light": ["white", "off white", "beige", "light grey", "cream"],
 }
 _COLOR_WORDS = ["black", "white", "grey", "gray", "beige", "brown", "blue", "navy", "green",
                 "red", "yellow", "mustard", "pink", "orange", "teal", "cream", "charcoal"]
@@ -61,10 +60,6 @@ _COLOR_WORDS = ["black", "white", "grey", "gray", "beige", "brown", "blue", "nav
 
 def _room_label(room_type: RoomType) -> str:
     return room_type.value.replace("_", " ")
-
-
-def _matched_categories(labels: list[str]) -> set[Category]:
-    return {c for c in (category_for_label(label) for label in labels) if c is not None}
 
 
 def max_width_for(category: Category, scene: SceneInfo, small_room: bool) -> float | None:
@@ -211,12 +206,30 @@ def _amount_in_text(text: str) -> float | None:
 
 
 def _categories_named(text: str) -> list[Category]:
-    words = re.findall(r"[a-z]+", text)
-    return list(dict.fromkeys(c for c in map(category_for_label, words) if c is not None))
+    named = [category_for_word(word) for word in re.findall(r"[a-z]+", text)]
+    # An object word right before another only modifies it: "table lamp" is one lamp.
+    heads = [c for c, following in zip(named, [*named[1:], None]) if c and following is None]
+    return list(dict.fromkeys(heads))
+
+
+def _mark_light_as_colour(text: str) -> str:
+    """"Light" is an object in "remove the light" and a colour in "a light rug" or
+    "make the sofa light". Rewrite the colour uses, so plain "light" always means a light."""
+
+    def before_noun(match: re.Match) -> str:
+        following = match.group(1)
+        is_colour = category_for_word(following) or following in _COLOR_WORDS
+        return f"lighter {following}" if is_colour else match.group(0)
+
+    def after_noun(match: re.Match) -> str:
+        return f"{match.group(1)}lighter" if category_for_word(match.group(2)) else match.group(0)
+
+    text = re.sub(r"\blight\s+([a-z]+)", before_noun, text)
+    return re.sub(r"(\b(?:make|paint)\b[^.,;]*?\b([a-z]+)\s+)light\b", after_noun, text)
 
 
 def parse_refinement(message: str) -> RefinementPatch:
-    text = message.lower()
+    text = _mark_light_as_colour(message.lower())
     patch = RefinementPatch(understood=False)
 
     for theme in Theme:
@@ -250,12 +263,11 @@ def parse_refinement(message: str) -> RefinementPatch:
     for category in _categories_named(text):
         if category in patch.keep_categories or category in patch.remove_categories:
             continue
-        colors: list[str] = []
-        for word, expansion in COLOR_ALIASES.items():
-            if re.search(rf"\b{word}\b", text):
-                colors = expansion
-                break
-        colors = colors or [c for c in _COLOR_WORDS if re.search(rf"\b{c}\b", text)]
+        # A named colour is more specific than "darker" or "lighter".
+        colors = [c for c in _COLOR_WORDS if re.search(rf"\b{c}\b", text)]
+        if not colors:
+            word = next((w for w in COLOR_ALIASES if re.search(rf"\b{w}\b", text)), None)
+            colors = COLOR_ALIASES.get(word, [])
         if colors:
             patch.color_requests.append(ColorRequest(category=category, colors=colors))
             patch.understood = True

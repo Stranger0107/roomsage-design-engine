@@ -14,7 +14,7 @@ from app.llm.schemas import (
     ChangeAction, DesignRequest, LLMDesignDraft, Priority, ProductRequirement, RefinementPatch,
 )
 from app.recommendations.engine import RankedProduct, SlotRecommendation, recommend, recommend_slot
-from app.scene.normalizer import build_scene
+from app.scene.normalizer import build_scene, category_for_label
 from app.services.design_models import Design
 from app.services.planner import build_plan
 from app.services.refinement import apply_patch
@@ -390,6 +390,60 @@ def test_plan_does_not_price_paint(real_catalog):
 )
 def test_refinement_parsing(message, check):
     assert check(rules.parse_refinement(message))
+
+
+@pytest.mark.parametrize(
+    "message,slot",
+    [
+        ("Make the sofa lighter", Category.SOFA_SEATING),
+        ("Make the sofa light", Category.SOFA_SEATING),
+        ("Use a light rug", Category.RUG),
+        ("Use a lighter curtain", Category.CURTAIN),
+    ],
+)
+def test_light_as_a_colour_leaves_lighting_alone(message, slot):
+    patch = rules.parse_refinement(message)
+    assert [r.category for r in patch.color_requests] == [slot]
+    assert "white" in patch.color_requests[0].colors
+
+
+@pytest.mark.parametrize("message", ["Remove the light", "no lights", "drop the lamps"])
+def test_light_as_an_object_is_still_lighting(message):
+    assert rules.parse_refinement(message).remove_categories == [Category.LIGHTING]
+
+
+def test_keeping_the_light_and_rug_keeps_both():
+    patch = rules.parse_refinement("keep the light and the rug")
+    assert patch.keep_categories == [Category.LIGHTING, Category.RUG]
+
+
+def test_black_light_recolours_lighting():
+    patch = rules.parse_refinement("use a black light")
+    assert patch.color_requests[0].category is Category.LIGHTING
+
+
+@pytest.mark.parametrize("message", ["Make the bedroom darker", "Keep the bedroom calm", "a tablet stand"])
+def test_room_and_lookalike_words_are_not_objects(message):
+    patch = rules.parse_refinement(message)
+    assert not patch.understood and not patch.color_requests and not patch.keep_categories
+
+
+def test_compound_noun_is_one_object():
+    assert rules.parse_refinement("remove the table lamp").remove_categories == [Category.LIGHTING]
+
+
+def test_named_colour_beats_a_vague_one():
+    patch = rules.parse_refinement("use a dark blue sofa")
+    assert patch.color_requests[0].colors == ["blue"]
+
+
+@pytest.mark.parametrize(
+    "label,category",
+    [("floor lamp", Category.LIGHTING), ("old wardrobe", Category.STORAGE), ("bookshelf", Category.STORAGE),
+     ("Couches", Category.SOFA_SEATING), ("bedroom", None), ("lighter", None)],
+)
+def test_scene_labels_match_whole_words(label, category):
+    assert category_for_label(label) is category
 
 
 def test_budget_only_refinement_skips_recommendations(real_catalog):
