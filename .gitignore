@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.vscode/
+.idea/
+
+# Downloaded source datasets; rebuilt by scripts/collect_products.py
+data/raw/
+
+# Runtime state
+uploads/*
+outputs/designs/*
+outputs/redesigns/*
+outputs/plans/*
+!uploads/.gitkeep
+!outputs/designs/.gitkeep
+!outputs/redesigns/.gitkeep
+!outputs/plans/.gitkeep
+
+# Model weights
+models/
+*.safetensors
+*.ckpt
