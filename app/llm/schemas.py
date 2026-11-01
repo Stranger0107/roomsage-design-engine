@@ -88,6 +88,13 @@ class LLMDesignDraft(BaseModel):
     rationale: str = Field(description="One or two sentences on the design direction.")
 
 
+class ColorRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    category: Category
+    colors: list[str]
+
+
 class RefinementPatch(BaseModel):
     """A natural-language request reduced to the only changes refinement supports."""
 
@@ -99,7 +106,7 @@ class RefinementPatch(BaseModel):
     keep_categories: list[Category] = Field(default_factory=list)
     remove_categories: list[Category] = Field(default_factory=list)
     reduce_decor: bool = False
-    color_requests: dict[Category, list[str]] = Field(
-        default_factory=dict, description="Colours asked for, per product category."
+    color_requests: list[ColorRequest] = Field(
+        default_factory=list, description="Colours asked for, per product category."
     )
     understood: bool = True

@@ -15,6 +15,7 @@ CATEGORY_BUDGET_SHARE = {
 }
 
 
+BUDGET_ALTERNATIVES = 2
 SINGLE_SEAT_WORDS = ("1 seater", "one seater", "bean bag", "armchair")
 
 
@@ -96,7 +97,7 @@ def score_product(
     if product.small_room_suitable and requirement.small_room_only:
         reasons.append("Compact enough for a small room.")
 
-    if requirement.category is Category.SOFA_SEATING and not requirement.small_room_only:
+    if requirement.category is Category.SOFA_SEATING:
         name = product.name.lower()
         if any(word in name for word in SINGLE_SEAT_WORDS):
             score -= 25
@@ -129,6 +130,15 @@ def recommend_slot(
     if len(options) < top_k:
         unpriced = [p for p in pool if not p.has_known_price]
         options += rank(unpriced)[: top_k - len(options)]
+
+    # The best matches can all be expensive, and the budget step needs somewhere to go.
+    chosen_ids = {o.product.product_id for o in options}
+    for ranked in sorted(rank(priced), key=lambda r: (r.product.price_inr, r.product.product_id)):
+        if len(options) >= top_k + BUDGET_ALTERNATIVES:
+            break
+        if ranked.product.product_id not in chosen_ids:
+            ranked.reasons.append("Lower-cost alternative.")
+            options.append(ranked)
 
     message = None
     if not options:

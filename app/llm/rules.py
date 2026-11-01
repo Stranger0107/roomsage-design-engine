@@ -6,6 +6,7 @@ import re
 from app.core.models import Category, RoomType, Theme
 from app.llm.schemas import (
     ChangeAction,
+    ColorRequest,
     DesignRequest,
     DesignSpec,
     FurnitureChange,
@@ -248,6 +249,6 @@ def parse_refinement(message: str) -> RefinementPatch:
                 break
         colors = colors or [c for c in _COLOR_WORDS if re.search(rf"\b{c}\b", text)]
         if colors:
-            patch.color_requests[category] = colors
+            patch.color_requests.append(ColorRequest(category=category, colors=colors))
             patch.understood = True
     return patch

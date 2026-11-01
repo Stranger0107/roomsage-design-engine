@@ -98,8 +98,10 @@ def _solve(slots: list[SlotRecommendation], budget_inr: float) -> dict[str, Prod
             var = model.add_variable(f"x_{s}_{o}", cat="Binary")
             choices[(s, o)] = var
             slot_vars.append(var)
-            # +1 so a zero-score product still beats leaving the slot empty.
-            objective.append(PRIORITY_WEIGHT[slot.priority] * (1 + option.score / 100) * var)
+            # +1 so a zero-score product still beats leaving the slot empty. The last
+            # term settles exact ties toward the cheaper option, so runs are repeatable.
+            value = PRIORITY_WEIGHT[slot.priority] * (1 + option.score / 100)
+            objective.append((value - option.product.price_inr / budget_inr * 0.001) * var)
             cost.append(option.product.price_inr * var)
         if slot_vars:
             model += pulp.lpSum(slot_vars) <= 1, f"one_per_slot_{s}"
@@ -109,7 +111,7 @@ def _solve(slots: list[SlotRecommendation], budget_inr: float) -> dict[str, Prod
     model += pulp.lpSum(cost) <= budget_inr, "budget"
 
     # CBC can report GapLimit at a zero gap, which is still the optimal answer.
-    stats = model.solve(pulp.COIN_CMD(msg=False, gapRel=0))
+    stats = model.solve(pulp.COIN_CMD(msg=False, gapRel=0, gapAbs=0))
     if not stats.has_solution:
         raise UnavailableError(f"Budget solver finished with status {stats.status.name}.")
     return {slots[s].slot: slots[s].options[o].product

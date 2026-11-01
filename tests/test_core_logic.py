@@ -1,8 +1,10 @@
+import itertools
+
 import httpx
 import httpx2
 import pytest
 
-from app.budget.optimizer import calculate_selection, optimize_budget
+from app.budget.optimizer import PRIORITY_WEIGHT, calculate_selection, optimize_budget
 from app.config import Settings
 from app.core.models import Category, RoomType, Theme
 from app.dataset.catalog import Catalog
@@ -125,6 +127,23 @@ def test_anthropic_client_sends_structured_request():
     assert draft.redesign_prompt == "p"
     assert "server-side-fallback-2026-07-01" in seen["beta"]
     assert '"fallbacks":"default"' in seen["body"].replace(" ", "")
+
+
+def test_refinement_patch_schema_is_accepted_by_the_sdk():
+    def handler(request):
+        return httpx2.Response(200, json={
+            "id": "msg_1", "type": "message", "role": "assistant", "model": "claude-opus-5-5",
+            "content": [{"type": "text", "text": '{"theme":"japandi","budget_limit_inr":20000,"small_room":null,'
+                         '"keep_categories":[],"remove_categories":[],"reduce_decor":false,'
+                         '"color_requests":[{"category":"sofa_seating","colors":["navy"]}],"understood":true}'}],
+            "stop_reason": "end_turn", "stop_sequence": None, "usage": {"input_tokens": 1, "output_tokens": 1},
+        })
+
+    settings = Settings(_env_file=None, llm_provider="anthropic", llm_api_key="k",
+                        llm_base_url="https://llm.test")
+    client = AnthropicClient(settings, http_client=httpx2.Client(transport=httpx2.MockTransport(handler)))
+    patch = client.generate(RefinementPatch, "sys", "user")
+    assert patch.theme is Theme.JAPANDI and patch.color_requests[0].colors == ["navy"]
 
 
 def test_anthropic_refusal_is_unavailable():
@@ -260,6 +279,50 @@ def test_lower_cost_option_is_offered():
     assert result.lower_cost_options[0].saving_inr == 2000
 
 
+def test_recommendations_include_a_cheap_way_out():
+    products = [make_product(f"p{i}", Category.RUG, 4000 + i, color="white") for i in range(5)]
+    products.append(make_product("cheap", Category.RUG, 300))
+    catalog = Catalog(products, {})
+    request = DesignRequest(theme=Theme.MODERN, budget_inr=50000)
+    spec = rules.build_spec(request, {"palette": ["white"], "accent_colors": [], "materials": [],
+                                      "prompt": "p", "label": "Modern", "description": "d"})
+    requirement = ProductRequirement(slot="rug", category=Category.RUG, priority=Priority.RECOMMENDED,
+                                     preferred_colors=["white"])
+    options = recommend_slot(requirement, spec, catalog).options
+    assert options[0].product.color == "white"
+    cheap = next(o for o in options if o.product.product_id == "cheap")
+    assert "Lower-cost alternative." in cheap.reasons
+
+
+@pytest.mark.parametrize("budget", [60000, 20000, 8000, 2500])
+def test_solver_matches_exhaustive_search(real_catalog, budget):
+    request = DesignRequest(theme=Theme.JAPANDI, budget_inr=60000, room_type=RoomType.LIVING_ROOM)
+    spec = rules.build_spec(request, real_catalog.theme(Theme.JAPANDI))
+    slots = recommend(spec, real_catalog)
+
+    def value(slot, option):
+        return PRIORITY_WEIGHT[slot.priority] * (1 + option.score / 100)
+
+    choices = [[None, *(o for o in s.options if o.product.price_inr)] for s in slots]
+    best = max(
+        (sum(value(s, o) for s, o in zip(slots, combo) if o)
+         for combo in itertools.product(*choices)
+         if sum(o.product.price_inr for o in combo if o) <= budget),
+    )
+    result = optimize_budget(slots, budget)
+    options = {o.product.product_id: (s, o) for s in slots for o in s.options}
+    assert sum(value(*options[i.product_id]) for i in result.items) == pytest.approx(best)
+
+
+def test_unbinding_budget_does_not_change_the_selection(real_catalog):
+    request = DesignRequest(theme=Theme.MODERN, budget_inr=500000, room_type=RoomType.LIVING_ROOM)
+    spec = rules.build_spec(request, real_catalog.theme(Theme.MODERN))
+    slots = recommend(spec, real_catalog)
+    first = optimize_budget(slots, 500000)
+    second = optimize_budget(slots, first.total_inr + 1)
+    assert {i.product_id for i in first.items} == {i.product_id for i in second.items}
+
+
 def test_stale_prices_are_disclosed():
     a = make_product("a", Category.RUG, 3000)
     result = optimize_budget([slot("rug", Category.RUG, Priority.RECOMMENDED, a)], 5000)
@@ -305,7 +368,7 @@ def test_plan_does_not_price_paint(real_catalog):
     "message,check",
     [
         ("Make the room more minimalist.", lambda p: p.theme is Theme.MINIMALIST and p.reduce_decor),
-        ("Use a darker sofa.", lambda p: "charcoal" in p.color_requests[Category.SOFA_SEATING]),
+        ("Use a darker sofa.", lambda p: p.color_requests[0].category is Category.SOFA_SEATING and "charcoal" in p.color_requests[0].colors),
         ("Keep the existing bed.", lambda p: p.keep_categories == [Category.BED]),
         ("Make it suitable for a small room.", lambda p: p.small_room is True),
         ("Keep everything under ₹20,000.", lambda p: p.budget_limit_inr == 20000 and not p.keep_categories),

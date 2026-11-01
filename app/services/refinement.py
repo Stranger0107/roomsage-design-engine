@@ -86,10 +86,10 @@ def apply_patch(design: Design, patch: RefinementPatch, catalog: Catalog) -> Ref
     if patch.keep_categories and _drop_slots(spec, patch.keep_categories, ChangeAction.KEEP):
         spec_changed = True
 
-    for category, colors in patch.color_requests.items():
+    for request in patch.color_requests:
         for requirement in spec.product_requirements:
-            if requirement.category is category:
-                requirement.preferred_colors = list(colors)
+            if requirement.category is request.category:
+                requirement.preferred_colors = list(request.colors)
                 spec_changed = True
                 if recompute is not None:
                     recompute.add(requirement.slot)
