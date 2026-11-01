@@ -118,7 +118,7 @@ class DiffusionRenderer:
         )
         pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
         pipe.enable_attention_slicing()
-        pipe.enable_vae_slicing()
+        pipe.vae.enable_slicing()
         if cuda:
             # Keeps only the active sub-model on the GPU.
             pipe.enable_model_cpu_offload()

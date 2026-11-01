@@ -47,6 +47,8 @@ NEGATIVE_PROMPT = (
     "people, text, watermark, cartoon, painting, oversaturated"
 )
 
+SATURATED_COLORS = ["blue", "red", "green", "yellow", "purple", "orange", "pink"]
+
 COLOR_ALIASES = {
     "darker": ["charcoal", "dark grey", "black", "brown", "navy"],
     "dark": ["charcoal", "dark grey", "black", "brown", "navy"],
@@ -132,12 +134,18 @@ def compose_redesign_prompt(
     base_prompt: str, room_type: RoomType, palette: list[str], selected_items: list[str] | None = None
 ) -> str:
     """CLIP reads about 75 tokens, so the most important terms come first."""
-    parts = [f"photo of a {_room_label(room_type)}", base_prompt,
-             f"{', '.join(palette[:3])} colour palette"]
+    parts = [f"photo of a {_room_label(room_type)}"]
     if selected_items:
-        parts.append(", ".join(selected_items[:3]))
-    parts.append("photorealistic interior photography")
+        parts.append(f"with {' and '.join(selected_items[:3])}")
+    parts += [base_prompt, f"{', '.join(palette[:3])} colour palette",
+              "photorealistic interior photography"]
     return ", ".join(parts)
+
+
+def off_palette_negative(negative_prompt: str, palette: list[str], accents: list[str]) -> str:
+    """SD 1.5 drifts toward saturated colours, so name the ones the theme does not use."""
+    allowed = " ".join([*palette, *accents]).lower()
+    return ", ".join([negative_prompt, *(c for c in SATURATED_COLORS if c not in allowed)])
 
 
 def compose_edit_prompt(theme_label: str, palette: list[str], materials: list[str]) -> str:

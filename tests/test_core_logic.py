@@ -86,6 +86,17 @@ def test_llm_draft_only_changes_creative_fields(real_catalog):
     assert [r.slot for r in spec.product_requirements] == [r.slot for r in base.product_requirements]
 
 
+def test_off_palette_colours_are_negated_but_theme_colours_are_not():
+    negative = rules.off_palette_negative("blurry", ["beige"], ["pastel blue", "green"])
+    assert "red" in negative and "pink" in negative
+    assert "blue" not in negative and "green" not in negative
+
+
+def test_chosen_items_lead_the_preview_prompt():
+    prompt = rules.compose_redesign_prompt("japandi interior", RoomType.LIVING_ROOM, ["beige"], ["beige sofa"])
+    assert prompt.index("beige sofa") < prompt.index("japandi interior")
+
+
 def test_llm_failure_falls_back_to_rules(real_catalog):
     class Broken:
         def generate(self, *args):

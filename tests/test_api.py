@@ -167,3 +167,16 @@ def test_openapi_lists_the_contract(client):
     for path in ("/designs", "/designs/full", "/designs/{design_id}/refine", "/designs/{design_id}/preview",
                  "/catalog/themes", "/designs/{design_id}/edit-3d"):
         assert f"{P}{path}" in paths
+
+
+def test_demo_records_are_off_by_default_and_disclosed_when_on(tmp_path):
+    design = {"theme": "japandi", "budget_inr": 60000, "room_type": "bedroom"}
+    real = TestClient(create_app(Settings(_env_file=None, uploads_dir=tmp_path / "u", outputs_dir=tmp_path / "o")))
+    products = real.get(f"{P}/catalog/products", params={"q": "DEMO"}).json()
+    assert products["total"] == 0
+
+    demo = TestClient(create_app(Settings(_env_file=None, demo_catalog=True, uploads_dir=tmp_path / "u",
+                                          outputs_dir=tmp_path / "o")))
+    budget = demo.post(f"{P}/designs/full", json=design).json()["budget"]
+    assert any(i["verification_status"] == "demo" for i in budget["items"])
+    assert any("demo records" in note for note in budget["price_notes"])

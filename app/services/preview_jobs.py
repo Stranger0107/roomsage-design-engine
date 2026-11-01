@@ -11,6 +11,7 @@ from uuid import uuid4
 from pydantic import BaseModel
 
 from app.core.errors import NotFoundError, RoomSageError
+from app.llm.rules import off_palette_negative
 from app.redesign.base import EditScope, Renderer, RenderRequest
 from app.services.design_models import PreviewRecord
 from app.services.design_service import DesignService
@@ -70,7 +71,8 @@ class PreviewJobs:
                 image_path=image_path,
                 output_path=self._output_dir / f"{job.job_id}.png",
                 prompt=prompt,
-                negative_prompt=design.spec.negative_prompt,
+                negative_prompt=off_palette_negative(
+                    design.spec.negative_prompt, design.spec.color_palette, design.spec.accent_colors),
                 scope=scope,
                 target_categories=target_categories,
                 keep_categories=self._service.kept_categories(design),
