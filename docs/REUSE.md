@@ -39,11 +39,11 @@ adds keep-masks and composites the original pixels back.
 | Candidate | Why not |
 |---|---|
 | [RoomGPT](https://github.com/Nutlope/roomGPT) | A web app around a paid hosted API, with no pipeline to reuse |
-| [adirik/interior-design](https://replicate.com/adirik/interior-design) | A hosted model. Running two ControlNets costs more VRAM than this GPU has to spare |
+| [adirik/interior-design](https://replicate.com/adirik/interior-design) | A hosted model rather than a local pipeline |
 | Base, Large and Giant Depth Anything V2 | CC BY-NC 4.0, and unnecessary at 512 px |
-| SegFormer | NVIDIA's license did not check out in this review, and UperNet is MIT |
+| SegFormer | Its license could not be confirmed in this review, and UperNet is MIT |
 | OneFormer Swin-tiny | MIT, but ships no safetensors weights |
-| IKEA and retailer scrapers | Paid services, or terms that do not allow it |
+| Paid IKEA and retailer scrapers | Paid services, and scraping was out of scope |
 | [apx103/ikea](https://github.com/apx103/ikea) | Images are limited to non-commercial use |
 
 ## Custom code

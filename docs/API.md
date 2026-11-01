@@ -140,4 +140,5 @@ These are part of the contract, not edge cases:
 - **`preview.stale`.** The design has moved on since this image was made. Offer to regenerate.
 - **`preview.limitations`.** Show these near the image. The preview is illustrative and does not
   depict the recommended products.
-- **Previews are slow.** Expect about a minute per image on a GPU. Poll every few seconds.
+- **Previews take time.** About 20 seconds per image on an RTX 4050, plus model loading on the
+  first request, and they run one at a time. Poll every few seconds.

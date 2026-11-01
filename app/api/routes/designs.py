@@ -90,7 +90,7 @@ def refine_design(design_id: str, payload: RefineRequest, deps: Deps) -> RefineR
 @router.post("/designs/{design_id}/preview", response_model=PreviewJob,
              status_code=status.HTTP_202_ACCEPTED)
 def start_preview(design_id: str, payload: PreviewRequest, deps: Deps) -> PreviewJob:
-    """Queue a 2D preview. Poll GET /previews/{job_id}; each job takes a minute or more on a GPU."""
+    """Queue a 2D preview. Poll GET /previews/{job_id}. Jobs run one at a time."""
     image_path = resolve_upload(deps, payload.upload_id)
     return deps.previews.submit(design_id, payload.upload_id, image_path, payload.scope,
                                 payload.target_categories)
